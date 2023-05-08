@@ -1,0 +1,5 @@
+@startuml 演習3-2
+left to right direction
+医局 "所属部署"---->"従業員" 医師
+医師 "1"--"*" 患者:診察する >
+@enduml
