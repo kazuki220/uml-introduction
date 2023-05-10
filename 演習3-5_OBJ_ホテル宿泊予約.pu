@@ -1,0 +1,40 @@
+@startuml 演習3-5
+left to right direction
+object "<u>利用者1: 利用者</u>" as user1 {
+名前:"Aさん"
+住所:
+電話番号:
+}
+object "<u>利用者2: 利用者</u>" as user2 {
+名前:"Bさん"
+住所:
+電話番号:
+}
+object "<u>ホテル1: ホテル</u>" as hot1 {
+部屋:"301号室"
+}
+object "<u>ホテル2: ホテル</u>" as hot2 {
+部屋:"302号室"
+}
+object "<u>ホテル3: ホテル</u>" as hot3 {
+部屋:"303号室"
+}
+object "<u>部屋1: 部屋</u>" as room1 {
+タイプ:"シングル"
+価格:"11,000円"
+キャンペーン価格:"9,000円"
+}
+object "<u>予約1: 予約</u>" as res1 {
+チェックイン日:"5月3日"
+滞在期間:"2泊"
+値段:"9,000円"
+}
+user1 -- hot1 
+user2 -- hot3
+hot1 o-- room1
+hot2 o-- room1
+hot3 o-- room1
+res1 *-- user1
+res1 *-- user2
+res1 -- room1
+@enduml
