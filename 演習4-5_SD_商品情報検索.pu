@@ -1,0 +1,30 @@
+@startuml 演習4-5
+hide footbox
+skinparam style strictuml
+Actor 会員 as user
+participant ":商品検索画面" as boundary <<boundary>>
+participant ":商品検索コントローラ" as control <<control>>
+participant ":商品" as entity <<entity>>
+participant ":商品カテゴリ" as entity2 <<entity>>
+activate user
+user -> boundary: 
+activate boundary
+boundary -> control: 商品検索 ()
+create entity
+activate control
+control -->> entity: <<create>> 生成()
+loop 商品カテゴリ数
+create entity2
+control -->> entity2: <<create>> 生成()
+control -> entity:商品カテゴリを設定 ()
+activate entity
+deactivate entity
+end loop
+control -->> boundary: 商品情報 ()
+deactivate control
+boundary -> boundary: 商品情報を表示 ()
+    activate boundary
+deactivate boundary
+deactivate boundary
+deactivate user
+@enduml
