@@ -1,0 +1,24 @@
+@startuml 演習4-6
+hide footbox
+Actor ユーザー as user
+participant ":ブラウザ" as browser 
+participant ":Webサーバー" as web
+participant ":画像サーバー" as image 
+activate user
+user -> browser: 画像のリンクを押す ()
+activate browser
+browser -> web: 画像のファイル名を伝える ()
+activate web
+web -> image: 画像のファイル名を探す命令を伝える ()
+activate image
+image -> image: 画像ファイルを探す ()
+    activate image
+deactivate image
+image -->> web: 画像ファイルを返す ()
+deactivate image
+web -->> browser: 画像ファイルを送る ()
+deactivate web
+browser -->> user: 画像を表示 ()
+deactivate browser
+deactivate user
+@enduml
