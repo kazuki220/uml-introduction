@@ -1,0 +1,9 @@
+@startuml 演習6-2
+left to right direction
+state 未使用{
+    予約済 --> 空室 : キャンセル
+    空室 ---> 予約済 : 予約
+}
+使用中 --> 空室 : 使用完了
+予約済 --> 使用中 : 使用
+@enduml
