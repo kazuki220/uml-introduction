@@ -1,0 +1,23 @@
+@startuml 演習6-4-3
+hide footbox
+Actor 客 as customer
+participant ":料金装置" as price
+participant ":ボタン" as bottan
+participant ":ベンダー装置" as vendor
+activate customer
+customer -> price: お金を入れる ()
+activate price
+price -> bottan: お金が入ったことを伝える ()
+activate bottan
+activate vendor
+customer -> bottan: ボタンを押す ()
+bottan -> vendor: ボタンで押されたドリンクを伝える ()
+vendor -> vendor: ドリンクを出す ()
+vendor -->> bottan: ドリンク
+bottan -->> price: ドリンク
+price -->> customer: ドリンク
+deactivate vendor
+deactivate bottan
+deactivate price
+deactivate customer
+@enduml
