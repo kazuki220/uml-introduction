@@ -1,0 +1,14 @@
+@startuml 演習6-5-2
+left to right direction
+actor ユーザー #DDDDDD;line:black;line.bold;
+actor 光センサー #DDDDDD;line:black;line.bold;
+actor 右モータ #DDDDDD;line:black;line.bold;
+actor 左モータ #DDDDDD;line:black;line.bold;
+rectangle ライントレーサー {
+usecase ラインの右境界線上を進む
+}
+ユーザー -- ラインの右境界線上を進む
+ラインの右境界線上を進む -- 光センサー
+ラインの右境界線上を進む -- 右モータ
+ラインの右境界線上を進む -- 左モータ
+@enduml

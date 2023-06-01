@@ -1,0 +1,9 @@
+@startuml 演習6-5-3
+left to right direction
+電源SWOFF --> 電源SWON: スイッチを入れる 
+state 電源SWON {
+右旋回 --> 左旋回: ラインを外れる 
+左旋回 --> 右旋回: 黒いライン上にある
+}
+電源SWON --> 電源SWOFF: スイッチを切る
+@enduml
